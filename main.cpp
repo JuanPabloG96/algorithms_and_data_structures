@@ -1,33 +1,31 @@
 #include <iostream>
+#include <string>
+#include <cstring>
 #include <chrono>
 
-#include "include/algorithms/search.h"
+#include "include/algorithms/search/string_search.h"
 
 using namespace std;
 
-int main()
-{
-
+int main(){
   auto start_time = std::chrono::high_resolution_clock::now();
+  //Test area
 
-  // Código que deseas medir
-  int test[10000];
+  string text = "akdonqwoihcaksndw";
+  string word = "onqwo";
+  size_t size = text.length();
+  size_t word_size = word.length();
 
-  for (int i = 0; i < 10000; i++)
-  {
-    test[i] = i + 1;
+  StringSearch<string> element(&text, size);
+
+  if(element.KMP(&word, word_size)){
+    cout << "La palabra '" << word << "' se encuentra en el texto '" << text << "'" << endl;
+  }
+  else{
+    cout << "No se encontro la palabra en el texto" << endl;
   }
 
-  int size = sizeof(test) / sizeof(test[0]);
-  int element = 9999;
-
-  Search<int> my_element(test, size);
-
-  if (my_element.LinealSearch(element) != -1)
-  {
-    cout << "El elemento esta en la posición: " << my_element.LinealSearch(element) << " del arreglo." << endl;
-  }
-
+  //Test area
   auto end_time = std::chrono::high_resolution_clock::now();
   auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
   std::cout << "Tiempo de ejecución: " << duration.count() << " micro-segundos" << std::endl;

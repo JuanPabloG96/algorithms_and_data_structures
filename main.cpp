@@ -12,17 +12,14 @@ int main(){
   //Test area
 
   string text = "akdonqwoihcaksndw";
-  string word = "onqwo";
+  string word = "ihca";
   size_t size = text.length();
   size_t word_size = word.length();
 
-  StringSearch<string> element(&text, size);
+  StringSearch<string> element(text, size);
 
-  if(element.KMP(&word, word_size)){
-    cout << "La palabra '" << word << "' se encuentra en el texto '" << text << "'" << endl;
-  }
-  else{
-    cout << "No se encontro la palabra en el texto" << endl;
+  if(element.KMP(word, word_size) != -1){
+    cout << "La palabra '" << word << "' esta en la posicion: " << element.KMP(word, word_size) << endl;
   }
 
   //Test area

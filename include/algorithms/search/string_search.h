@@ -1,39 +1,47 @@
 #include <iostream>
 
 template <typename T>
-class StringSearch{
+class StringSearch
+{
 private:
-    T Text;
-    size_t size;
+  T Text;
+  size_t size;
 
 public:
-    StringSearch(T Text, size_t size);
-    int KMP(T word, size_t word_size);
-    int BM(T word, size_t word_size);
+  StringSearch(T Text, size_t size);
+  int KMP(T word, size_t word_size);
+  int BM(T word, size_t word_size);
 };
 
 template <typename T>
-StringSearch<T>::StringSearch(T Text, size_t size){
-    this->Text = Text;
-    this->size = size;
+StringSearch<T>::StringSearch(T Text, size_t size)
+{
+  this->Text = Text;
+  this->size = size;
 }
 
 template <typename T>
-int StringSearch<T>::KMP(T word, size_t word_size){
+int StringSearch<T>::KMP(T word, size_t word_size)
+{
   int position = 0;
   size_t count = 0;
 
-  for(size_t i = 0; i <= size; i++){
-    if(count == word_size){
+  for (size_t i = 0; i <= size; i++)
+  {
+    if (count == word_size)
+    {
       return position;
     }
-    if(word[count] == Text[i]){
-      if(position == 0){
+    if (word[count] == Text[i])
+    {
+      if (position == 0)
+      {
         position = i;
       }
       count++;
     }
-    else{
+    else
+    {
       position = 0;
       count = 0;
     }
@@ -44,6 +52,7 @@ int StringSearch<T>::KMP(T word, size_t word_size){
 }
 
 template <typename T>
-int StringSearch<T>::BM(T word, size_t word_size){
-
+int StringSearch<T>::BM(T word, size_t word_size)
+{
+  return -1;
 }

@@ -1,6 +1,6 @@
 # Repositorio de Estructuras de Datos y Algoritmos
 
-Este es un repositorio que contendra implementaciones de diversas estructuras de datos y algoritmos en C++
+Este es un repositorio que contendra implementaciones de diversas estructuras de datos y algoritmos en C++, python y otros lenguajes
 para su uso en proyectos futuros y como recurso de referencia.
 
 ## Estructuras de Datos

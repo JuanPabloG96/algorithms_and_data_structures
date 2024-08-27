@@ -8,7 +8,7 @@ private:
 
 public:
   DoubleNode();
-  ~DoubleNode();
+  /* ~DoubleNode(); */
   T getData() const;
   void setData(const T &data);
   DoubleNode<T> *getNext() const;
